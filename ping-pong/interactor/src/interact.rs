@@ -93,7 +93,7 @@ impl PingPongInteract {
             .use_chain_simulator(config.use_chain_simulator());
 
         interactor.set_current_dir_from_workspace("ping-pong");
-        let alice_wallet_address = interactor.register_wallet(test_wallets::alice()).await;
+        let alice_wallet_address = interactor.register_wallet(Wallet::from_pem_file("/MultiversX-PingPong/wallet/wallet-owner.pem").unwrap()).await;
         let mike_wallet_address = interactor.register_wallet(test_wallets::mike()).await;
 
         // Useful in the chain simulator setting
